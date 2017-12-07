@@ -1,0 +1,22 @@
+# EditorConfig helps developers define and maintain consistent coding styles between
+# different editors and IDEs: http://EditorConfig.org.
+
+root = true
+
+[*]
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.py]
+# Comply with PEP8 -- Style Guide for Python Code: https://www.python.org/dev/peps/pep-0008/
+max_line_length = 80
+indent_size = 4
+
+[*.js]
+# Compy with Airbnb's JavaScript Style Guide: https://github.com/airbnb/javascript
+max_line_length = 100
+
+[*.md]
+trim_trailing_whitespace = false
