@@ -1,6 +1,6 @@
-# Django 2.0 template app for SourceLair
+# Django 2.1 template app for SourceLair
 
-This is a template Django 2.0 application provided by SourceLair.
+This is a template Django 2.1 application provided by SourceLair.
 
 ## Get started
 
