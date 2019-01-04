@@ -1,7 +1,7 @@
 from django.db import models
 
-from prose.widgets import DocumentEditor
+from prose.fields import DocumentContentField
 
 
 class Document(models.Model):
-    content = models.TextField()
+    content = DocumentContentField()
