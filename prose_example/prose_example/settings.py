@@ -27,6 +27,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# If this project is in debug mode and running on SourceLair, then add
+# `localhost` and its Public URL in the allowed hosts.
+if DEBUG and os.getenv('SL_PUBLIC_URL'):
+    ALLOWED_HOSTS += ['localhost', os.getenv('SL_PUBLIC_URL')]
+
 
 # Application definition
 
