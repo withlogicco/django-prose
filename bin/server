@@ -2,7 +2,6 @@
 
 set -e
 
-cd app
-python manage.py migrate
-python manage.py runserver 0.0.0.0:${PORT:-8000}
+python prose_example/manage.py migrate
+python prose_example/manage.py runserver 0.0.0.0:${PORT:-8000}
 
