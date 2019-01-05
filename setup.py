@@ -3,7 +3,7 @@ from setuptools import find_packages, setup
 
 setup(
     name="django_prose",
-    version="0.1.0",
+    version="0.1.1",
     description=(
         "Elegant prose authoring for Django"
     ),
@@ -21,4 +21,5 @@ setup(
     ],
     keywords="prose development rich text",
     packages=find_packages(),
+    include_package_data=True,
 )
