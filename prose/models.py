@@ -5,4 +5,3 @@ from prose.fields import DocumentContentField
 
 class Document(models.Model):
     content = DocumentContentField()
-
