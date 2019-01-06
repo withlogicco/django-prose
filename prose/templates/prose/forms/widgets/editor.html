@@ -1,5 +1,5 @@
 <div class="trix-container">
-  <input id="trix-for-{{ widget.name }}" name="{{ widget.name }}" type="hidden" name="content" {% if widget.value %}value="{{ widget.value }}"{% endif %} />
+  <input id="{{ widget.attrs.id }}" name="{{ widget.name }}" type="hidden" name="content" {% if widget.value %}value="{{ widget.value }}"{% endif %} />
 
-  <trix-editor input="trix-for-{{ widget.name }}" class="trix-content"></trix-editor>
+  <trix-editor input="{{ widget.attrs.id }}" class="trix-content"></trix-editor>
 </div>
