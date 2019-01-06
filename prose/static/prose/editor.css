@@ -1,17 +1,17 @@
-.trix-container {
+.django-prose-editor-container {
   overflow: auto;
 }
 
-form .aligned .trix-container trix-editor ul {
+form .aligned .django-prose-editor-container trix-editor ul {
   margin-left: initial;
   padding-left: initial;
 }
 
-form .aligned .trix-container trix-editor ol li,
-form .aligned .trix-container trix-editor ul li {
+form .aligned .django-prose-editor-container trix-editor ol li,
+form .aligned .django-prose-editor-container trix-editor ul li {
   list-style-position: inside;
 }
 
-form .aligned .trix-container trix-editor ul li {
+form .aligned .django-prose-editor-container trix-editor ul li {
   list-style-type: initial;
 }

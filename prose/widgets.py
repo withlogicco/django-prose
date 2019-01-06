@@ -13,4 +13,5 @@ class DocumentEditor(Textarea):
         }
         js = (
             'https://cdnjs.cloudflare.com/ajax/libs/trix/1.0.0/trix.js',
+            'prose/editor.js',
         )
