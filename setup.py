@@ -3,7 +3,7 @@ from setuptools import find_packages, setup
 
 setup(
     name="django_prose",
-    version="0.2.0",
+    version="0.2.1",
     description=(
         "Elegant prose authoring for Django"
     ),
