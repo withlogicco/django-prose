@@ -1,2 +1,2 @@
 web: ./bin/server
-post_release: python sl/manage.py migrate
+release: python sl/manage.py migrate
