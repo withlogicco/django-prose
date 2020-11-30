@@ -4,7 +4,7 @@ from django.utils.html import strip_tags
 from prose.fields import DocumentContentField
 
 
-class Document(models.Model):
+class AbstractDocument(models.Model):
     content = DocumentContentField()
 
     def get_plain_text_content(self):
@@ -17,3 +17,10 @@ class Document(models.Model):
             return plain_text
 
         return f"{plain_text[:28]}..."
+
+    class Meta:
+        abstract = True
+
+
+class Document(AbstractDocument):
+    pass
