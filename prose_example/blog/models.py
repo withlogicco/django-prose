@@ -11,3 +11,6 @@ class Article(models.Model):
         on_delete=models.CASCADE,
     )
     content = models.OneToOneField(Document, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.title} by {self.author.username}: {self.content}"

@@ -1,9 +1,16 @@
 # Django Prose
 
-TBA
+Wonderful rich-text editing in Django.
+
+## Install
+
+```console
+pip install django-prose
+```
+
 
 ---
 
 <p align="center">
-  <i>Built with ❤️ by <a href="https://www.sourcelair.com">SourceLair</a> in Athens, Greece.</i>
+  <i>Built with ❤️ in Athens, Greece.</i>
 </p>
