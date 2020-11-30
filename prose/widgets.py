@@ -7,11 +7,11 @@ class DocumentEditor(Textarea):
     class Media:
         css = {
             'all': (
-                'https://cdnjs.cloudflare.com/ajax/libs/trix/1.0.0/trix.css',
+                'https://cdnjs.cloudflare.com/ajax/libs/trix/1.3.0/trix.css',
                 'prose/editor.css',
             ),
         }
         js = (
-            'https://cdnjs.cloudflare.com/ajax/libs/trix/1.0.0/trix.js',
+            'https://cdnjs.cloudflare.com/ajax/libs/trix/1.3.0/trix.js',
             'prose/editor.js',
         )
