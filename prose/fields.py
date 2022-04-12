@@ -9,7 +9,7 @@ ALLOWED_TAGS = [
     "p", "ul", "ol", "li", "strong", "em", "div", "span", "a",
     "blockquote", "pre", "figure", "figcaption", "br", "code",
     "h1", "h2", "h3", "h4", "h5", "h6",
-    "picture", "source", "img,"
+    "picture", "source", "img",
 ]
 ALLOWED_ATTRIBUTES = [
     "alt", "class", "id", "src", "srcset", "href", "media",
