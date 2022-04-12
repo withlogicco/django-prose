@@ -127,5 +127,5 @@ USE_TZ = True
 STATIC_URL = "/static/"
 
 
-MEDIA_ROOT = os.getenv("MEDIA_ROOT", "/mnt/project/media")
+MEDIA_ROOT = os.getenv("MEDIA_ROOT", "/mnt/media")
 MEDIA_URL = os.getenv("MEDIA_URL", "/media/")

@@ -1,5 +1,7 @@
 # Django Prose
 
+![PyPI - Downloads](https://img.shields.io/pypi/dw/django-prose?color=purple) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/django-prose)
+
 Django Prose provides your Django applications with wonderful rich-text editing.
 
 ![Django Prose Document in Django Admin](./docs/django-admin-prose-document.png)
@@ -64,6 +66,13 @@ class Article(models.Model):
     body = models.OneToOneField(ArticleContent, on_delete=models.CASCADE)
 ```
 
+### Attachments
+
+Django Prose can also handle uploading attachments with drag and drop. To set this up, first you need to:
+
+- [x] Set up the `MEDIA_ROOT` of your Django project (example in [`prose_example/prose_example/settings.py`](https://github.com/withlogicco/django-prose/blob/55fb9319e55d873afe43968817a2f5ea3f055d11/prose_example/prose_example/settings.py#L132)))
+- [x] Include the Django Prose URLs (example in [`prose_example/prose_example/urls.py`](https://github.com/withlogicco/django-prose/blob/9073d713f8d3febe5c50705976dbb31063270886/prose_example/prose_example/urls.py#L9-L10))
+- [x] (Optional) Set up a different Django storage to store your files (e.g. S3)
 
 ## Development for Django Prose
 
