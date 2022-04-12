@@ -3,6 +3,7 @@ version: "3.8"
 x-base:
   &base
   build: .
+  image: django-prose
   volumes:
     - .:/usr/src/app
   working_dir: /usr/src/app/prose_example
