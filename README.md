@@ -31,7 +31,13 @@ INSTALLED_APPS = [
 ]
 ```
 
-Last, run migrations so you can use Django Prose's Document model.
+Last, run migrations so you can use Django Prose's Document model:
+
+```
+python manage.py migrate prose
+```
+
+Now, you are ready to go 🚀.
 
 ## Usage
 
