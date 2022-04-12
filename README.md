@@ -4,12 +4,11 @@
 
 Django Prose provides your Django applications with wonderful rich-text editing.
 
-![Django Prose Document in Django Admin](./docs/django-admin-prose-document.png)
-
 ## Requirements
 
 - Python 3.6.2 or later
 - Django 3.0 or later
+- Bleach 4.0 or later
 
 ## Getting started
 
@@ -80,9 +79,16 @@ Django Prose can also handle uploading attachments with drag and drop. To set th
 - [x] Include the Django Prose URLs (example in [`prose_example/prose_example/urls.py`](https://github.com/withlogicco/django-prose/blob/9073d713f8d3febe5c50705976dbb31063270886/prose_example/prose_example/urls.py#L9-L10))
 - [x] (Optional) Set up a different Django storage to store your files (e.g. S3)
 
+## Screenshots
+
+### Django Prose Documents in Django Admin
+
+
+![Django Prose Document in Django Admin](./docs/django-admin-prose-document.png)
+
 ## Development for Django Prose
 
-All development tooling for Django Prose has been set up with Docker. To get started run these commands in the provided order:
+If you plan to contribute code to Django Prose, this section is for you. All development tooling for Django Prose has been set up with Docker. To get started run these commands in the provided order:
 
 ```console
 docker compose run --rm migrate

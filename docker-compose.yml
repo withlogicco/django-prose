@@ -17,6 +17,12 @@ services:
       - ${PROSE_EXAMPLE_EXTERNAL_PORT:-8000}:8000
     command: python manage.py runserver 0.0.0.0:8000
 
+  shell:
+    <<: *base
+    command: python manage.py shell
+    profiles:
+      - tools
+
   makemigrations:
     <<: *base
     command: python manage.py makemigrations

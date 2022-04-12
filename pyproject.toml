@@ -12,7 +12,8 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.6.2"
-django = "3.*"
+django = ">=3.0"
+bleach = ">=4.0"
 
 [tool.poetry.dev-dependencies]
 black = "^22.3.0"
