@@ -31,3 +31,9 @@ services:
     command: python manage.py createsuperuser
     profiles:
       - tools
+
+  black:
+    <<: *base
+    command: black /usr/src/app
+    profiles:
+      - tools

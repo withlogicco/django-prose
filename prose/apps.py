@@ -2,5 +2,5 @@ from django.apps import AppConfig
 
 
 class ProseConfig(AppConfig):
-    name = 'prose'
-    label = 'prose'
+    name = "prose"
+    label = "prose"

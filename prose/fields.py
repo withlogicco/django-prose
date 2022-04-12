@@ -6,8 +6,9 @@ from prose.widgets import RichTextEditor
 
 class RichTextField(models.TextField):
     def formfield(self, **kwargs):
-        kwargs['widget'] = RichTextEditor
+        kwargs["widget"] = RichTextEditor
         return super().formfield(**kwargs)
+
 
 class DocumentContentField(RichTextField):
     pass
