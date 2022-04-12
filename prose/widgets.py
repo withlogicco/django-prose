@@ -1,7 +1,7 @@
 from django.forms.widgets import Textarea
 
 
-class DocumentEditor(Textarea):
+class RichTextEditor(Textarea):
     template_name = 'prose/forms/widgets/editor.html'
 
     class Media:

@@ -1,10 +1,13 @@
 from django import forms
 from django.db import models
 
-from prose.widgets import DocumentEditor
+from prose.widgets import RichTextEditor
 
 
-class DocumentContentField(models.TextField):
+class RichTextField(models.TextField):
     def formfield(self, **kwargs):
-        kwargs['widget'] = DocumentEditor
+        kwargs['widget'] = RichTextEditor
         return super().formfield(**kwargs)
+
+class DocumentContentField(RichTextField):
+    pass

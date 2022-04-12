@@ -1,0 +1,33 @@
+version: "3.8"
+
+x-base:
+  &base
+  build: .
+  volumes:
+    - .:/usr/src/app
+  working_dir: /usr/src/app/prose_example
+
+services:
+  web:
+    <<: *base
+    ports:
+      - ${PROSE_EXAMPLE_EXTERNAL_PORT:-8000}:8000
+    command: python manage.py runserver 0.0.0.0:8000
+
+  makemigrations:
+    <<: *base
+    command: python manage.py makemigrations
+    profiles:
+      - tools
+
+  migrate:
+    <<: *base
+    command: python manage.py migrate
+    profiles:
+      - tools
+
+  createsuperuser:
+    <<: *base
+    command: python manage.py createsuperuser
+    profiles:
+      - tools
