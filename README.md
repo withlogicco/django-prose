@@ -7,7 +7,7 @@ Django Prose provides your Django applications with wonderful rich-text editing.
 ## Requirements
 
 - Python 3.6.2 or later
-- Django 3.0 or later
+- Django 2.2 or later
 - Bleach 4.0 or later
 
 ## Getting started
