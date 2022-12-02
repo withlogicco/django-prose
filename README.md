@@ -83,6 +83,25 @@ Similarly here you can display the article's body by marking it as `safe`
 <div class="article-body">{{ article.body.content | safe}}</div>
 ```
 
+### Rendering in forms
+
+To load Trix and it's css, use `form.media` just below your form fields.
+
+```py
+<form  method="POST" >
+  {% csrf_token %}
+  
+  {{ form.as_p }}
+ 
+  {{ form.media }}
+  
+ <button type='submit'>Submit</button>
+</form>
+```
+
+This works the same if you are rendering your forms field manually. 
+
+
 ### Attachments
 
 Django Prose can also handle uploading attachments with drag and drop. To set this up, first you need to:
