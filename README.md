@@ -83,6 +83,23 @@ Similarly here you can display the article's body by marking it as `safe`
 <div class="article-body">{{ article.body.content | safe}}</div>
 ```
 
+### Forms with rich-text editing
+
+You can create forms for your Django Prose models, to provide rich-text editing functionality. In that case, you will also need to render `form.media`, to load Trix with its stylesheets.
+
+```django
+<form  method="POST" >
+  {% csrf_token %}
+  
+  {{ form.as_p }}
+  {{ form.media }}
+  
+  <button type="submit">Submit</button>
+</form>
+```
+
+The same is true also, if you are rendering the forms field manually.
+
 ### Attachments
 
 Django Prose can also handle uploading attachments with drag and drop. To set this up, first you need to:
