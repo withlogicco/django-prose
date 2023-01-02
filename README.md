@@ -83,24 +83,22 @@ Similarly here you can display the article's body by marking it as `safe`
 <div class="article-body">{{ article.body.content | safe}}</div>
 ```
 
-### Rendering in forms
+### Forms with rich-text editing
 
-To load Trix and it's css, use `form.media` just below your form fields.
+You can create forms for your Django Prose models, to provide rich-text editing functionality. In that case, you will also need to render `form.media`, to load Trix with its stylesheets.
 
-```py
+```django
 <form  method="POST" >
   {% csrf_token %}
   
   {{ form.as_p }}
- 
   {{ form.media }}
   
- <button type='submit'>Submit</button>
+  <button type="submit">Submit</button>
 </form>
 ```
 
-This works the same if you are rendering your forms field manually. 
-
+The same is true also, if you are rendering the forms field manually.
 
 ### Attachments
 
