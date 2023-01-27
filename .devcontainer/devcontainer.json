@@ -1,5 +1,5 @@
 {
-	"name": "Django Prose",
+  "name": "Django Prose",
   "dockerComposeFile": [
     "../docker-compose.yml",
     "docker-compose.yml"
@@ -16,8 +16,8 @@
     "editorconfig.editorconfig",
     "ms-python.python"
   ],
-	"features": {
+  "features": {
     "ghcr.io/devcontainers/features/common-utils:1": {},
     "ghcr.io/devcontainers/features/git:1": {}
-	}
+  }
 }
