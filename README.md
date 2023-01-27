@@ -137,7 +137,7 @@ For this reason Django Prose is using [Bleach](https://bleach.readthedocs.io/en/
 
 ## Real world use cases
 - **Remote Work Café**: Used to edit location pagess, like [Amsterdam | Remote Work Café](https://remotework.cafe/locations/amsterdam/)
-- In production by multiple clients of LOGIC, from small companies to the public sector.
+- In production by multiple clients of [LOGIC](https://withlogic.co), from small companies to the public sector.
 
 If you are using Django Prose in your application too, feek free to open a [Pull Request](https://github.com/withlogicco/django-prose/pulls) to include it here. We would love to have it.
 
