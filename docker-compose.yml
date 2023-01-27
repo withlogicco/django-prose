@@ -8,42 +8,42 @@ x-base:
     - .:/usr/src/app
     - media:/mnt/media
     - static:/mnt/static
-  working_dir: /usr/src/app/prose_example
+  working_dir: /usr/src/app/
 
 services:
   web:
     <<: *base
     ports:
       - ${PROSE_EXAMPLE_EXTERNAL_PORT:-8000}:8000
-    command: python manage.py runserver 0.0.0.0:8000
+    command: python example/manage.py runserver 0.0.0.0:8000
 
   shell:
     <<: *base
-    command: python manage.py shell
+    command: python example/manage.py shell
     profiles:
       - tools
 
   makemigrations:
     <<: *base
-    command: python manage.py makemigrations
+    command: python example/manage.py makemigrations
     profiles:
       - tools
 
   migrate:
     <<: *base
-    command: python manage.py migrate
+    command: python example/manage.py migrate
     profiles:
       - tools
 
   createsuperuser:
     <<: *base
-    command: python manage.py createsuperuser
+    command: python example/manage.py createsuperuser
     profiles:
       - tools
 
   black:
     <<: *base
-    command: black /usr/src/app
+    command: black .
     profiles:
       - tools
 

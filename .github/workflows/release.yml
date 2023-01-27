@@ -7,13 +7,13 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - run: pipx install poetry==1.1.13
+    - run: pipx install poetry==1.3.2
     - uses: actions/setup-python@v4
       with:
-        python-version: '3.10'
+        python-version: '3.11'
         cache: poetry
     - run: poetry install
     - run: poetry config pypi-token.pypi ${{ secrets.PYPI_TOKEN }}

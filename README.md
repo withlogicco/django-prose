@@ -6,8 +6,8 @@ Django Prose provides your Django applications with wonderful rich-text editing.
 
 ## Requirements
 
-- Python 3.6.2 or later
-- Django 2.2 or later
+- Python 3.8 or later
+- Django 3.2 or later
 - Bleach 4.0 or later
 
 ## Getting started
@@ -137,5 +137,5 @@ docker compose up
 ---
 
 <p align="center">
-  <i>🦄 Built with ❤️ by <a href="https://withlogic.co/">LOGIC</a>. 🦄</i>
+  <i>🦄 Built with <a href="https://withlogic.co/">LOGIC</a>. 🦄</i>
 </p>
