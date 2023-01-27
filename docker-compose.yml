@@ -15,7 +15,7 @@ services:
     <<: *base
     ports:
       - ${PROSE_EXAMPLE_EXTERNAL_PORT:-8000}:8000
-    command: python example/manage.py runserver 0.0.0.0:8000
+    command: ./bin/server
 
   shell:
     <<: *base

@@ -56,7 +56,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "prose_example.urls"
+ROOT_URLCONF = "example.urls"
 
 TEMPLATES = [
     {
@@ -74,7 +74,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "prose_example.wsgi.application"
+WSGI_APPLICATION = "example.wsgi.application"
 
 
 # Database
@@ -129,3 +129,5 @@ STATIC_URL = "/static/"
 
 MEDIA_ROOT = os.getenv("MEDIA_ROOT", "/mnt/media")
 MEDIA_URL = os.getenv("MEDIA_URL", "/media/")
+
+DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
