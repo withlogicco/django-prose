@@ -18,7 +18,7 @@ To get started with Django Prose, first make sure to install it. We use and sugg
 poetry add django-prose
 ```
 
-Then, add `prose` in Django's installed apps (example: [`example/example/settings.py`](https://github.com/withlogicco/django-prose/blob/55fb9319e55d873afe43968817a2f5ea3f055d11/example/example/settings.py#L46)):
+Then, add `prose` in Django's installed apps (example: [`example/example/settings.py`](https://github.com/withlogicco/django-prose/blob/9e24cc794eae6db48818dd15a483d106d6a99da0/example/example/settings.py#L46)):
 
 ```python
 INSTALLED_APPS = [
@@ -112,8 +112,8 @@ The same is true also, if you are rendering the forms field manually.
 
 Django Prose can also handle uploading attachments with drag and drop. To set this up, first you need to:
 
-- [x] Set up the `MEDIA_ROOT` of your Django project (example in [`example/example/settings.py`](https://github.com/withlogicco/django-prose/blob/55fb9319e55d873afe43968817a2f5ea3f055d11/example/example/settings.py#L132)))
-- [x] Include the Django Prose URLs (example in [`example/example/urls.py`](https://github.com/withlogicco/django-prose/blob/9073d713f8d3febe5c50705976dbb31063270886/example/example/urls.py#L9-L10))
+- [x] Set up the `MEDIA_ROOT` and `MEDIA_URL` of your Django project (example in [`example/example/settings.py`](https://github.com/withlogicco/django-prose/blob/9e24cc794eae6db48818dd15a483d106d6a99da0/example/example/settings.py#L130-L131)))
+- [x] Include the Django Prose URLs (example in [`example/example/urls.py`](https://github.com/withlogicco/django-prose/blob/9e24cc794eae6db48818dd15a483d106d6a99da0/example/example/urls.py#L13-L14))
 - [x] (Optional) Set up a different Django storage to store your files (e.g. S3)
 
 ### Full example
