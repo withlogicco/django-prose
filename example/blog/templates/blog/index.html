@@ -1,0 +1,18 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}Articles | Blog example | Django Prose{% endblock title %}
+{% block description %}Read {{ articles.count }} in this blog built with Django Prose{% endblock description %}
+
+{% block content %}
+<ul>
+  {% for article in articles %}
+    <li>
+      <h2>{{ article.title }}</h2>
+      <p>{{ article.excerpt | safe }}</p>
+      <a href="{% url 'blog_article' article.pk %}">Read more</a>
+    </li>
+  {% empty %}
+    <li>No articles written yet!</li>
+  {% endfor %}
+</ul>
+{% endblock content %}

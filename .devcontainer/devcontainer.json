@@ -1,0 +1,23 @@
+{
+  "name": "Django Prose",
+  "dockerComposeFile": [
+    "../docker-compose.yml",
+    "docker-compose.yml"
+  ],
+  "service": "web",
+  "workspaceFolder": "/usr/src/app",
+  "settings": {
+    "python.formatting.provider": "black",
+    "editor.formatOnSave": true,
+    "eslint.format.enable": true
+  },
+  "extensions": [
+    "batisteo.vscode-django",
+    "editorconfig.editorconfig",
+    "ms-python.python"
+  ],
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:1": {},
+    "ghcr.io/devcontainers/features/git:1": {}
+  }
+}

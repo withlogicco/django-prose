@@ -1,0 +1,10 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}{{ article.title }} | Blog example | Django Prose{% endblock title %}
+{% block description %}{{ article.excerpt }}{% endblock description %}
+
+{% block content %}
+<h1>{{ article.title }}</h1>
+<div>{{ article.author.username }}</div>
+<div>{{ article.body.content | safe }}</div>
+{% endblock content %}
