@@ -135,6 +135,12 @@ For this reason Django Prose is using [Bleach](https://bleach.readthedocs.io/en/
 
 ![Django Prose Document in Django Admin](./docs/django-admin-prose-document.png)
 
+## Video tutorial
+
+If you are more of a video person, you can watch our video showcasing how to **Create a blog using Django Prose** on YouTube
+
+[![Watch the video](https://img.youtube.com/vi/uICZjUpAbhQ/hqdefault.jpg)](https://youtu.be/uICZjUpAbhQ)
+
 ## Real world use cases
 - **Remote Work Café**: Used to edit location pagess, like [Amsterdam | Remote Work Café](https://remotework.cafe/locations/amsterdam/)
 - In production by multiple clients of [LOGIC](https://withlogic.co), from small companies to the public sector.
