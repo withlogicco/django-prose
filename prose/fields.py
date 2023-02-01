@@ -30,6 +30,7 @@ ALLOWED_TAGS = [
     "picture",
     "source",
     "img",
+    "del",
 ]
 ALLOWED_ATTRIBUTES = [
     "alt",
