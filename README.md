@@ -136,6 +136,16 @@ Django Prose can also handle uploading attachments with drag and drop. To set th
 - [x] Include the Django Prose URLs (example in [`example/example/urls.py`](https://github.com/withlogicco/django-prose/blob/9e24cc794eae6db48818dd15a483d106d6a99da0/example/example/urls.py#L13-L14))
 - [x] (Optional) Set up a different Django storage to store your files (e.g. S3)
 
+- Attachments are uploaded with a path structure of `/YEAR/MONTH/DATE/UUID.EXT`
+- By default, only files 5MB or less are allowed.
+
+Allowed file size can be overridden by setting `PROSE_ATTACHMENT_ALLOWED_FILE_SIZE` in your Django project's settings file.
+
+```python
+# File size in megabytes
+PROSE_ATTACHMENT_ALLOWED_FILE_SIZE = 15
+```
+
 ### Full example
 
 You can find a full example of a blog, built with Django Prose in the [`example`](./example/) directory.
