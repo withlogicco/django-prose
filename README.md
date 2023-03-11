@@ -35,7 +35,7 @@ Last, run migrations so you can use Django Prose's Document model:
 ```
 python manage.py migrate prose
 ```
-And as a last step, you need to edit the `urls.py` file and add the path to the prose files:
+And as a last step, you need to edit the `urls.py` file and add prose urls:
 
 ```python
 urlpatterns = [
