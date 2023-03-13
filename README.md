@@ -12,38 +12,50 @@ Django Prose provides your Django applications with wonderful rich-text editing 
 
 ## Getting started
 
-To get started with Django Prose, first make sure to install it. We use and suggest using Poetry, although Pipenv and pip will work seamlessly as well
+To get started with Django Prose, all you need to do is follow **just four steps**.
 
-```console
-poetry add django-prose
-```
+1. **Install `django-prose`**
+    
+    We use and suggest using Poetry, although Pipenv and plain pip will work seamlessly as well
+    
+    ```console
+    poetry add django-prose
+    ```
 
-Then, add `prose` in Django's installed apps (example: [`example/example/settings.py`](https://github.com/withlogicco/django-prose/blob/9e24cc794eae6db48818dd15a483d106d6a99da0/example/example/settings.py#L46)):
+2. **Add to `INSTALLED_APPS`**
+    
+    Add `prose` in your Django project's installed apps (example: [`example/example/settings.py`](https://github.com/withlogicco/django-prose/blob/9e24cc794eae6db48818dd15a483d106d6a99da0/example/example/settings.py#L46)):
+    
+    ```python
+    INSTALLED_APPS = [
+        # Django stock apps (e.g. 'django.contrib.admin')
+    
+        'prose',
+    
+        # your application's apps
+    ]
+    ```
 
-```python
-INSTALLED_APPS = [
-    # Django stock apps (e.g. 'django.contrib.admin')
+3. **Run migrations**
 
-    'prose',
+    This is required so you can use Django Prose's built-in Document model:
+  
+    ```console
+    python manage.py migrate prose
+    ```
 
-    # your application's apps
-]
-```
+4. **Include URLs**
 
-Last, run migrations so you can use Django Prose's Document model:
+    You need to edit the main `urls.py` file of your Django project and include `prose.urls`:
+    
+    ```python
+    urlpatterns = [
+        path('admin/', admin.site.urls),
+        # other urls ...
+        path("prose/", include("prose.urls")),
+    ]
+    ```
 
-```
-python manage.py migrate prose
-```
-And as a last step, you need to edit the `urls.py` file and add prose urls:
-
-```python
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    # other urls ...
-    path("prose/", include("prose.urls")),
-]
-```
 Now, you are ready to go 🚀.
 
 ## Usage
