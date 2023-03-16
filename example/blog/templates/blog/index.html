@@ -8,7 +8,9 @@
   {% for article in articles %}
     <li>
       <h2>{{ article.title }}</h2>
-      <p>{{ article.excerpt | safe }}</p>
+      {% if article.excerpt %}
+        <p>{{ article.excerpt | safe }}</p>
+      {% endif %}
       <a href="{% url 'blog_article' article.pk %}">Read more</a>
     </li>
   {% empty %}
