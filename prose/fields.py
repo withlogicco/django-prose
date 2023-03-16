@@ -50,11 +50,13 @@ class RichTextField(models.TextField):
 
     def pre_save(self, model_instance, add):
         raw_html = getattr(model_instance, self.attname)
-        if raw_html:
-            sanitized_html = bleach.clean(
-                raw_html, tags=ALLOWED_TAGS, attributes=ALLOWED_ATTRIBUTES
-            )
-            return sanitized_html
+        if not raw_html:
+            return raw_html
+
+        sanitized_html = bleach.clean(
+            raw_html, tags=ALLOWED_TAGS, attributes=ALLOWED_ATTRIBUTES
+        )
+        return sanitized_html
 
 
 class DocumentContentField(RichTextField):
