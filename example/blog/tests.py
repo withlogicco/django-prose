@@ -17,7 +17,7 @@ class ArticleModelTests(TestCase):
 
     def create_article(self, title: str, excerpt: str | None, body: str) -> Article:
         """Create a Article with the given informations."""
-        body = Document.objects.create(content="test body")
+        body = Document.objects.create(content=body)
         return Article.objects.create(
             title=title, author=self.su, excerpt=excerpt, body=body
         )
