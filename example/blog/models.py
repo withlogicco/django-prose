@@ -11,7 +11,7 @@ class Article(models.Model):
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
     )
-    excerpt = RichTextField(blank=True)
+    excerpt = RichTextField(blank=True, null=True)
     body = models.OneToOneField(Document, on_delete=models.CASCADE)
 
     def __str__(self):
