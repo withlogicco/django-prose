@@ -140,6 +140,25 @@ Django Prose can also handle uploading attachments with drag and drop. To set th
 
 You can find a full example of a blog, built with Django Prose in the [`example`](./example/) directory.
 
+### Tips & Tricks
+
+**Dark mode solution**
+
+Trix doesn't fully support dark mode yet, but dark mode has been working in Django since version 4. If you want Trix to display correctly even in dark mode, there is one simple solution and that is to make the buttons in the Trix editor white in the background. For example, in the Django admin you do it like this:
+```html
+{% extends 'admin/base.html' %}
+
+{% block extrastyle %}{{ block.super }}
+<style>
+trix-toolbar .trix-button {
+  background: #fff !important;
+}
+</style>
+{% endblock %}
+```
+Put this code in the base.html file and save it in the correct directory - according to https://docs.djangoproject.com/en/4.1/ref/contrib/admin/#admin-overriding-templates .
+You can do the same in any of your templates where you also have a Trix editor.
+
 ## 🔒 A note on security
 
 As you can see in the examples above, what Django Prose does is provide you with a user friendly editor ([Trix](https://trix-editor.org/)) for your rich text content and then store it as HTML in your database. Since you will mark this HTML as safe in order to use it in your templates, it needs to be **sanitised**, before it gets stored in the database.
