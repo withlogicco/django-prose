@@ -1,6 +1,6 @@
 from django import forms
 from django.db import models
-import bleach
+import nh3
 
 from prose.widgets import RichTextEditor
 
@@ -53,7 +53,7 @@ class RichTextField(models.TextField):
         if not raw_html:
             return raw_html
 
-        sanitized_html = bleach.clean(
+        sanitized_html = nh3.clean(
             raw_html, tags=ALLOWED_TAGS, attributes=ALLOWED_ATTRIBUTES
         )
         return sanitized_html
