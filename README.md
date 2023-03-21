@@ -144,7 +144,7 @@ You can find a full example of a blog, built with Django Prose in the [`example`
 
 As you can see in the examples above, what Django Prose does is provide you with a user friendly editor ([Trix](https://trix-editor.org/)) for your rich text content and then store it as HTML in your database. Since you will mark this HTML as safe in order to use it in your templates, it needs to be **sanitised**, before it gets stored in the database.
 
-For this reason Django Prose is using [Bleach](https://bleach.readthedocs.io/en/latest/) to only allow the following tags and attributes:
+For this reason Django Prose is using [nh3](https://nh3.readthedocs.io/en/latest/) to only allow the following tags and attributes:
 
 - **Allowed tags**: `p`, `ul`, `ol`, `li`, `strong`, `em`, `div`, `span`, `a`, `blockquote`, `pre`, `figure`, `figcaption`, `br`, `code`, `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `picture`, `source`, `img`
 - **Allowed attributes**: `alt`, `class`, `id`, `src`, `srcset`, `href`, `media`
