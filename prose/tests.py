@@ -47,7 +47,7 @@ assert len(ALLOWED_TAGS_BLEACH) == len(ALLOWED_TAGS_NH3)
 assert len(ALLOWED_ATTRIBUTES_BLEACH) == len(ALLOWED_ATTRIBUTES_NH3["*"])
 
 raw_html = """
-        <div class="div_tag">
+        <div class="div_tag" id="some_id">
         <p> p <em>em</em>
         <ul>
             <li>li</li>
