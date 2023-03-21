@@ -5,42 +5,48 @@ import nh3
 from prose.widgets import RichTextEditor
 
 
-ALLOWED_TAGS = [
-    "p",
-    "ul",
-    "ol",
-    "li",
-    "strong",
-    "em",
-    "div",
-    "span",
-    "a",
-    "blockquote",
-    "pre",
-    "figure",
-    "figcaption",
-    "br",
-    "code",
-    "h1",
-    "h2",
-    "h3",
-    "h4",
-    "h5",
-    "h6",
-    "picture",
-    "source",
-    "img",
-    "del",
-]
-ALLOWED_ATTRIBUTES = [
-    "alt",
-    "class",
-    "id",
-    "src",
-    "srcset",
-    "href",
-    "media",
-]
+ALLOWED_TAGS = set(
+    [
+        "p",
+        "ul",
+        "ol",
+        "li",
+        "strong",
+        "em",
+        "div",
+        "span",
+        "a",
+        "blockquote",
+        "pre",
+        "figure",
+        "figcaption",
+        "br",
+        "code",
+        "h1",
+        "h2",
+        "h3",
+        "h4",
+        "h5",
+        "h6",
+        "picture",
+        "source",
+        "img",
+        "del",
+    ]
+)
+ALLOWED_ATTRIBUTES = {
+    "*": set(
+        [
+            "alt",
+            "class",
+            "id",
+            "src",
+            "srcset",
+            "href",
+            "media",
+        ]
+    )
+}
 
 
 class RichTextField(models.TextField):
@@ -54,7 +60,7 @@ class RichTextField(models.TextField):
             return raw_html
 
         sanitized_html = nh3.clean(
-            raw_html, tags=ALLOWED_TAGS, attributes=ALLOWED_ATTRIBUTES
+            raw_html, tags=ALLOWED_TAGS, attributes=ALLOWED_ATTRIBUTES, link_rel=None
         )
         return sanitized_html
 
