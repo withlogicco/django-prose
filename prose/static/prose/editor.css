@@ -15,3 +15,7 @@ form .aligned .django-prose-editor-container trix-editor ul li {
 form .aligned .django-prose-editor-container trix-editor ul li {
   list-style-type: initial;
 }
+
+.django-prose-editor-container trix-toolbar .trix-button {
+  background: #fff !important;
+}
