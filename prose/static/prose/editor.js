@@ -1,7 +1,6 @@
-// Handle uploads
-
+// This code goes in /static/prose/editor.js or similar
 function uploadAttachment(host, attachment) {
-  uploadFile(host, attachment, setProgress, setAttributes);
+  uploadFile(host, attachment.file, setProgress, setAttributes);
 
   function setProgress(progress) {
     attachment.setUploadProgress(progress);
@@ -12,50 +11,28 @@ function uploadAttachment(host, attachment) {
   }
 }
 
-document.addEventListener("DOMContentLoaded", function(event) {
-  const editors = document.querySelectorAll('.django-prose-editor');
-
-  editors.forEach(editor => {
-    addEventListener("trix-attachment-add", function(event) {
-      uploadAttachment(editor.dataset.uploadAttachmentUrl, event.attachment);
-    });
-  });
-});
-
-function uploadFile(host, attachment, progressCallback, successCallback) {
-  var formData = createFormData(attachment.file);
-  var xhr = new XMLHttpRequest();
-
+function uploadFile(host, file, progressCallback, successCallback) {
+  const formData = createFormData(file);
+  const xhr = new XMLHttpRequest();
   const csrfToken = document.querySelector("input[name=csrfmiddlewaretoken]").value;
 
-  formData.append('csrfmiddlewaretoken', csrfToken);
+  formData.append("csrfmiddlewaretoken", csrfToken);
 
   xhr.open("POST", host, true);
 
-  xhr.upload.addEventListener("progress", function(event) {
-    var progress = event.loaded / event.total * 100;
+  xhr.upload.addEventListener("progress", function (event) {
+    const progress = (event.loaded / event.total) * 100;
     progressCallback(progress);
   });
 
-  xhr.addEventListener("load", function(event) {
-    let data = {};
-    switch (xhr.status) {
-      case 201:
-        data = JSON.parse(xhr.response);
-        var attributes = {
-          url: data.url,
-          href: `${data.url}?content-disposition=attachment`
-        };
-        successCallback(attributes);
-        break;
-      case 400:
-        data = JSON.parse(xhr.response);
-        alert(data.error);
-        attachment.remove();
-        break;
-      default:
-        alert("The upload failed.");
-        attachment.remove();
+  xhr.addEventListener("load", function (event) {
+    if (xhr.status == 201) {
+      const data = JSON.parse(xhr.response);
+      const attributes = {
+        url: data.url,
+        href: `${data.url}?content-disposition=attachment`,
+      };
+      successCallback(attributes);
     }
   });
 
@@ -63,8 +40,26 @@ function uploadFile(host, attachment, progressCallback, successCallback) {
 }
 
 function createFormData(file) {
-  var data = new FormData();
+  const data = new FormData();
   data.append("file", file);
   data.append("Content-Type", file.type);
   return data;
 }
+
+function initializeEditors() {
+  const editors = document.querySelectorAll(".django-prose-editor:not(.initialized)");
+
+  editors.forEach((editor) => {
+    editor.addEventListener("trix-attachment-add", function (event) {
+      uploadAttachment(editor.dataset.uploadAttachmentUrl, event.attachment);
+    });
+    editor.classList.add("initialized");
+  });
+}
+
+// When the DOM is initially loaded
+document.addEventListener("DOMContentLoaded", initializeEditors);
+
+// Export the initializeEditors function so it can be called from other scripts
+window.djangoProse = window.djangoProse || {};
+window.djangoProse.initializeEditors = initializeEditors;
