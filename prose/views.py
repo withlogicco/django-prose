@@ -22,7 +22,10 @@ def upload_attachment(request):
                 {"error": f"Files must be {ALLOWED_FILE_SIZE}MB or smaller."},
                 status=400,
             )
-        key = f"{datetime.now().strftime('%Y/%m/%d')}/{uuid4()}.{attachment.name.split('.')[-1]}"
+        attachment_dir = datetime.now().strftime("%Y/%m/%d")
+        attachment_id = uuid4()
+        attachment_extension = attachment.name.split(".")[-1]
+        key = f"{attachment_dir}/{attachment_id}.{attachment_extension}"
         path = f"prose/{key}"
         default_storage.save(path, attachment)
         payload = {
