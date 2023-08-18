@@ -5,3 +5,5 @@ db.sqlite3
 build/
 dist/
 media/
+
+node_modules/

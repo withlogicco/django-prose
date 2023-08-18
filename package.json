@@ -1,0 +1,16 @@
+{
+  "name": "django-prose",
+  "version": "1.2.2",
+  "description": "Wonderful rich text for Django",
+  "main": "prose/static/prose/editor.js",
+  "repository": "https://github.com/withlogicco/django-prose.git",
+  "author": "Paris Kasidiaris <paris@withlogic.co>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "prettier": "3.0.2"
+  },
+  "scripts": {
+    "format": "yarn prettier prose/static/prose --write"
+  }
+}
