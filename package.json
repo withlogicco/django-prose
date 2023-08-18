@@ -11,6 +11,8 @@
     "prettier": "3.0.2"
   },
   "scripts": {
-    "format": "yarn prettier prose/static/prose --write"
+    "prettier:base": "yarn prettier prose/static/prose",
+    "lint": "yarn prettier:base --check",
+    "format": "yarn prettier:base --write"
   }
 }
