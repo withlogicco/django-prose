@@ -21,7 +21,7 @@ function uploadFile(host, file, progressCallback, successCallback) {
   xhr.open("POST", host, true);
 
   xhr.upload.addEventListener("progress", function (event) {
-    const progress = event.loaded / event.total * 100;
+    const progress = (event.loaded / event.total) * 100;
     progressCallback(progress);
   });
 
@@ -30,7 +30,7 @@ function uploadFile(host, file, progressCallback, successCallback) {
       const data = JSON.parse(xhr.response);
       const attributes = {
         url: data.url,
-        href: `${data.url}?content-disposition=attachment`
+        href: `${data.url}?content-disposition=attachment`,
       };
       successCallback(attributes);
     }
@@ -49,7 +49,7 @@ function createFormData(file) {
 function initializeEditors() {
   const editors = document.querySelectorAll(".django-prose-editor:not(.initialized)");
 
-  editors.forEach(editor => {
+  editors.forEach((editor) => {
     editor.addEventListener("trix-attachment-add", function (event) {
       uploadAttachment(editor.dataset.uploadAttachmentUrl, event.attachment);
     });
@@ -61,5 +61,5 @@ function initializeEditors() {
 document.addEventListener("DOMContentLoaded", initializeEditors);
 
 // Export the initializeEditors function so it can be called from other scripts
-window.djangoProse = window.djangoProse || {}
+window.djangoProse = window.djangoProse || {};
 window.djangoProse.initializeEditors = initializeEditors;
