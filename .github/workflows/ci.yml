@@ -11,7 +11,7 @@ jobs:
     name: Test (Python)
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - run: pipx install poetry==1.3.2
     - uses: actions/setup-python@v4
       with:
@@ -24,7 +24,7 @@ jobs:
     name: Test (JavaScript)
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - uses: actions/setup-node@v3
       with:
         node-version: '20.x'
