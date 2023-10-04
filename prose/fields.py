@@ -35,7 +35,6 @@ ALLOWED_TAGS = [
 ALLOWED_ATTRIBUTES = [
     "alt",
     "class",
-    "id",
     "src",
     "srcset",
     "href",
