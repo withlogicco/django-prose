@@ -16,7 +16,7 @@ django = ">=3.2"
 bleach = ">=4.0"
 
 [tool.poetry.dev-dependencies]
-black = "^24.1.1"
+black = "^24.2.0"
 
 [build-system]
 requires = ["poetry>=0.12"]
