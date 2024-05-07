@@ -1,6 +1,7 @@
 from django import forms
 from django.db import models
-import bleach
+from lxml.html.clean import Cleaner
+from lxml import html
 
 from prose.widgets import RichTextEditor
 
@@ -55,6 +56,12 @@ class RichTextField(models.TextField):
         sanitized_html = bleach.clean(
             raw_html, tags=ALLOWED_TAGS, attributes=ALLOWED_ATTRIBUTES
         )
+        cleaner = Cleaner(scripts=True, javascript=True, comments=True, iframes=True)
+
+        clean_html = cleaner.clean_html(html_content)
+
+        sanitized_html = html.tostring(clean_html, pretty_print=True).decode('utf-8')
+
         return sanitized_html
 
 
