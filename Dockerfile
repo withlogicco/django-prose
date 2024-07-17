@@ -1,6 +1,6 @@
-FROM ghcr.io/withlogicco/poetry:1.3.2-python-3.11
+FROM ghcr.io/withlogicco/poetry:1.8.3-python-3.12
 
-COPY ./ ./
-RUN --mount=type=cache,target=/root/.cache/pip --mount=type=cache,target=/root/.cache/pypoetry poetry install
+COPY pyproject.toml poetry.lock ./
+RUN poetry install
 
 COPY ./ ./
