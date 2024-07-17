@@ -57,8 +57,25 @@ function initializeEditors() {
   });
 }
 
+/**
+ * https://github.com/withlogicco/django-prose/issues/100
+ */
+function patchTrixEditorWithNameSetter() {
+  Object.defineProperty(window.Trix.elements.TrixEditorElement.prototype, "name", {
+    get() {
+      return this.inputElement?.name;
+    },
+    set(value) {
+      this.inputElement.name = value;
+    }
+  });
+}
+
 // When the DOM is initially loaded
-document.addEventListener("DOMContentLoaded", initializeEditors);
+document.addEventListener("DOMContentLoaded", () => {
+  initializeEditors()
+  patchTrixEditorWithNameSetter()
+});
 
 // Export the initializeEditors function so it can be called from other scripts
 window.djangoProse = window.djangoProse || {};
