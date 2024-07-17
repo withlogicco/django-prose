@@ -67,14 +67,14 @@ function patchTrixEditorWithNameSetter() {
     },
     set(value) {
       this.inputElement.name = value;
-    }
+    },
   });
 }
 
 // When the DOM is initially loaded
 document.addEventListener("DOMContentLoaded", () => {
-  initializeEditors()
-  patchTrixEditorWithNameSetter()
+  initializeEditors();
+  patchTrixEditorWithNameSetter();
 });
 
 // Export the initializeEditors function so it can be called from other scripts
