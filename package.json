@@ -1,6 +1,6 @@
 {
   "name": "django-prose",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "Wonderful rich-text editing for Django",
   "main": "prose/static/prose/editor.js",
   "repository": "https://github.com/withlogicco/django-prose.git",
