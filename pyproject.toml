@@ -1,14 +1,12 @@
 [tool.poetry]
 name = "django-prose"
-version = "2.0.0"
-description = "Wonderful rich text for Django"
+version = "2.0.1"
+description = "Wonderful rich text-editing for Django"
 authors = ["Paris Kasidiaris <paris@withlogic.co>"]
 license = "MIT"
 repository = "https://github.com/parisk/django-prose"
 readme = "README.md"
-packages = [
-    { include = "prose" },
-]
+packages = [{ include = "prose" }]
 
 [tool.poetry.dependencies]
 python = "^3.8"
