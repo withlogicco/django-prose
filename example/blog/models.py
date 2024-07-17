@@ -11,8 +11,17 @@ class Article(models.Model):
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
     )
-    excerpt = RichTextField(blank=True, null=True)
+    excerpt = RichTextField(blank=True, default="")
     body = models.OneToOneField(Document, on_delete=models.CASCADE)
 
     def __str__(self):
         return f"{self.title} by {self.author.username}: {self.body}"
+
+
+class Comment(models.Model):
+    article = models.ForeignKey(Article, on_delete=models.CASCADE)
+    author = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+    )
+    body = RichTextField(blank=True, default="")
