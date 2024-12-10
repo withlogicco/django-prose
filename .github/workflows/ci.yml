@@ -1,5 +1,9 @@
 name: CI
 
+permissions:
+  contents: write
+  pull-requests: write
+
 on:
   pull_request:
   push:
@@ -31,3 +35,14 @@ jobs:
         cache: yarn
     - run: yarn
     - run: yarn lint
+
+  dependabot:
+    runs-on: ubuntu-latest
+    if: github.actor == 'dependabot[bot]'
+    needs: [test-python, test-js]
+    env:
+      PR_URL: ${{github.event.pull_request.html_url}}
+      GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+    steps:
+      - run: gh pr review --approve "$PR_URL"
+      - run: gh pr merge --auto --merge "$PR_URL"
