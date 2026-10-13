@@ -157,7 +157,7 @@ As you can see in the examples above, what Django Prose does is provide you with
 For this reason Django Prose is using [Bleach](https://bleach.readthedocs.io/en/latest/) to only allow the following tags and attributes:
 
 - **Allowed tags**: `p`, `ul`, `ol`, `li`, `strong`, `em`, `div`, `span`, `a`, `blockquote`, `pre`, `figure`, `figcaption`, `br`, `code`, `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `picture`, `source`, `img`
-- **Allowed attributes**: `alt`, `class`, `id`, `src`, `srcset`, `href`, `media`
+- **Allowed attributes**: `alt`, `class`, `src`, `srcset`, `href`, `media`; on `figure` also Trix's `data-trix-attachment` and `data-trix-attributes` (JSON with only the keys Trix writes for uploaded files and captions, and http(s) or relative addresses) and `data-trix-content-type`, which Trix needs to open saved attachments again as they were; on `img` also `width` and `height`
 
 ## Screenshots
 
