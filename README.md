@@ -138,12 +138,29 @@ Django Prose can also handle uploading attachments with drag and drop. To set th
 
 - Attachments are uploaded with a path structure of `/YEAR/MONTH/DATE/UUID.EXT`
 - By default, only files 5MB or less are allowed.
+- Only signed-in users can upload attachments. Anyone else gets a `403` response.
 
 Allowed file size can be overridden by setting `PROSE_ATTACHMENT_ALLOWED_FILE_SIZE` in your Django project's settings file.
 
 ```python
 # File size in megabytes
 PROSE_ATTACHMENT_ALLOWED_FILE_SIZE = 15
+```
+
+To allow uploads only to some of your users, for example staff members, route the upload view yourself, instead of including `prose.urls`:
+
+```python
+from django.contrib.admin.views.decorators import staff_member_required
+from prose.views import upload_attachment
+
+urlpatterns = [
+    # other urls ...
+    path(
+        "prose/attachment/",
+        staff_member_required(upload_attachment),
+        name="prose_upload_attachment",
+    ),
+]
 ```
 
 ### Full example
@@ -158,6 +175,8 @@ For this reason Django Prose is using [Bleach](https://bleach.readthedocs.io/en/
 
 - **Allowed tags**: `p`, `ul`, `ol`, `li`, `strong`, `em`, `div`, `span`, `a`, `blockquote`, `pre`, `figure`, `figcaption`, `br`, `code`, `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `picture`, `source`, `img`
 - **Allowed attributes**: `alt`, `class`, `id`, `src`, `srcset`, `href`, `media`
+
+Uploaded attachments are stored in your media storage and served from your site, which makes them part of it: an uploaded HTML file, for example, would run its scripts on your domain. This is why Django Prose accepts uploads only from signed-in users (see [Attachments](#attachments) to restrict them further).
 
 ## Screenshots
 
