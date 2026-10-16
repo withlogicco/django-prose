@@ -23,6 +23,7 @@ jobs:
         cache: poetry
     - run: poetry install
     - run: poetry run black --check .
+    - run: poetry run python example/manage.py test prose blog
 
   test-js:
     name: Test (JavaScript)
